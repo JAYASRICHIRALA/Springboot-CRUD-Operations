@@ -27,18 +27,18 @@ public class UserController {
         return ResponseEntity.ok(userRepository.save(user));
     }
 
-    /*// Update user
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
         return userRepository.findById(id)
             .map(user -> {
                 user.setName(updatedUser.getName());
                 user.setEmail(updatedUser.getEmail());
-                user.setName(updatedUser.getPhone());
+                user.setPhone(updatedUser.getPhone());
                 return ResponseEntity.ok(userRepository.save(user));
             })
             .orElse(ResponseEntity.notFound().build());
     }
+
 
     // Delete user
     @DeleteMapping("/{id}")
@@ -48,6 +48,6 @@ public class UserController {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();
-    }*/
+    }
 }
 
